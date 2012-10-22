@@ -1,0 +1,24 @@
+<h1 class="product"><span class="de-empahsis">> <%= @product.productline.title %></span> > <%= @product.name %></h1>
+<div class="<%= 'bottomBorder' if @product.pillows %>">
+	<img src="/img/products/banners/<%= @product.url_name %>.jpg" />
+	<h2 class="productName"><%= @product.name %></h2>
+	<a id="single_image" href="/img/products/zoomed/<%= @product.url_name %>.jpg">
+		<img class="right" src="/img/products/enlarge/<%= @product.url_name %>.jpg" />
+	</a>
+	<%= "<p class='specs'>#{@product.description}</p>" if @product.description %>
+	<%= "<p class='specs'>#{@product.specs}</p>" if @product.specs %>
+</div>
+<% if @product.pillows  %>
+	<div class="pillows">
+		<img class="right" src="/img/products/pillows/<%= @product.pillows %>" />
+		<h2>Pillows Available In</h2>
+		<ul class="unstlyled">
+			<li>Size 12" by 12"</li>
+			<li>Size 15" by 15"</li>
+			<li>Size 20" by 20"</li>
+		</ul>
+		
+		<p>*dry-clean washable only</p>
+	</div>
+<% end %>
+	

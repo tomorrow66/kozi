@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<title>Kozishop.com</title>
+	
+	<link rel="shortcut icon" href="favicon.ico" />
+	<link type="text/css" rel="stylesheet" href="/css/theme.css" />
+	<script type="text/javascript" src="/js/dependencies/jquery-1.8.0.min.js"></script>
+	<script type="text/javascript" src="/js/interactions.js"></script>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Kozi</title>
+	<script type="text/javascript" src="/js/plugins/animate_color.js"></script>
+	<link href="/css/style.css" rel="stylesheet" type="text/css" />
+	<script src="/js/plugins/slides.js"></script>
+	<script>
+	  $(function(){
+	    $("#slider").slides({
+					play: 5000,
+					pause: 2500,
+					pagination: false,
+					generatePagination: false,
+					fadeSpeed: 350,
+					effect: 'fade',
+					bigTarget: true
+				});
+	  });
+	    $(window).bind('load', function () {
+	       $('img.fade').cross();
+	    });
+	</script>
+</head>
+
+<body class="pagesBG">
+
+<div id="container" class="index">
+<div id="header">
+  <div id="headersocial">
+    <a href="mailto:charkoplin@kozishop.com"><img src="/img/icon_email.png" border="0" /></a>
+    <a href="http://www.facebook.com/kozithrows" target="_blank"><img src="/img/icon_facebook.png" border="0" /></a>
+    <a href="http://www.twitter.com/kozi_throws" target="_blank"><img src="/img/icon_twitter.png" border="0" /></a>    
+  </div>
+  <div id="menu" class="index" >
+    <a href="/about" class="nav" >about</a>
+    <a href="/products" class="nav" >products</a>
+    <a href="/calendar" class="nav" >calendar</a>
+    <a href="/contact" class="nav" >contact</a>
+    <a href="/press" class="nav press" >press</a>
+  </div><!-- menu -->
+  <div id="headerlogo" class="index">
+    <a href="/index"><img src="/img/home/index_logo.png" border="0" /></a>
+  </div><!-- headerlogo -->
+</div><!-- header -->
+
+<div class="break" style="height:10px;"></div>
+
+<div id="content">
+
+	<%= alert %>
+	<div id="slider">
+      <div class="slides_container">
+        <img src="/img/home/slider/checker.jpg" />
+        <img src="/img/home/slider/feathergold.jpg" />
+        <img src="/img/home/slider/fox.jpg" />
+        <img src="/img/home/slider/fox2.jpg" />
+        <img src="/img/home/slider/foxtail2.jpg" />
+        <img src="/img/home/slider/granada_olivia.jpg" />
+        <img src="/img/home/slider/granadapillows.jpg" />
+        <img src="/img/home/slider/home_slider2_4.jpeg" />
+        <img src="/img/home/slider/shaggy_ivory2.jpg" />
+        <img src="/img/home/slider/siberianleopard.jpg" />
+        <img src="/img/home/slider/vinecuddlepillows.jpg" /> 
+      </div>
+    </div><!-- slider -->
+    
+    <div class="break"></div>
+	  <div id="subcontent" class="accordian">
+	       <a href="/products/fantastical" id="fantastical" >
+	         <p class="label index">Fantastical</p>
+	         <img class="" src="/img/home/columns/button_featherfancypurple.jpg" alt="" border="0" />
+	         <img class="fade" src="/img/home/columns/button_featherfancypurple_off.jpg" alt="" border="0" />
+	       </a>
+	       <a href="/products/plushtastic" style="padding-left:4px;" id="plushtastic" >
+	         <p class="label index">Plushtastic</p>
+	         <img class="" src="/img/home/columns/button_inspiredbynature.jpg"  alt="" border="0" />
+	         <img class="fade" src="/img/home/columns/button_inspiredbynature_off.jpg" alt="" border="0" />
+	       </a>
+	       <a href="/products/nature" style="padding-left:4px;" id="inspired" >
+	         <p class="label index">Inspired by Nature</p>
+	         <img class="" src="/img/home/columns/button_plushtastic.jpg" alt="" border="0" />
+	         <img class="fade" src="/img/home/columns/button_plushtastic_off.jpg" alt="" border="0" />
+	       </a>
+	  </div><!-- subcontent -->
+	
+</div><!-- content -->
+
+<div class="break"></div>
+
+<div id="footer" class="index"	>
+  <img src="/img/footer-logo.png" style="padding-bottom:15px;" /><br />
+    <div style="margin-left:140px;margin-right:140px;" id="pageFooter">
+  Kozi up with a plush animal friendly faux fur throw.   Crafted in the USA, Kozi offers three product lines.  These luxurious throws are 60 by 72 inches and are available to the trade and retail stores. Want to carry Kozi?<br /><a href="contact.php" class="index">Click here for more information</a>. <br /><br />
+  <p style="font-size:12px;color:#797979;">Site created by <a href="http://www.tomorrowpictures.com" target="_blank" class="index">Tomorrow Pictures</a>. Kozi © <%= Time.now.display(:year) %>. All rights reserved.</p>
+  </div>
+</div><!-- footer -->
+
+</div><!-- container -->
+</body>
+</html>

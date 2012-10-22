@@ -1,0 +1,9 @@
+<h1 class="productline">> <%= @productline.title %></h1>
+<div class="accordian productline <%= @productline.url_name %>">
+	<% @productline.products.each do |p| %>
+	  <a href="/product/<%= p.url_name %>" class="">
+	  	<img src="/img/product-line/<%= @id %>/<%= p.url_name %>_on.jpg" />
+	  	<img src="/img/product-line/<%= @id %>/<%= p.url_name %>_off.jpg" class="fade" />
+	  </a>
+	<% end %>
+</div>
