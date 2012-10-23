@@ -49,7 +49,9 @@ get '/products/:id/?' do
 	  flash[:alert] = 'I see what you tried to do there.'
 	  redirect '/home'
 	end
-	
+		
+	products = Product.all(productline_id: @productline.id)
+	@products = products.all(:order => [ :position.asc ])
 	erb :product_line
 end
 

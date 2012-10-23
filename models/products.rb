@@ -8,7 +8,7 @@ class Product
 	
 	property :id, Serial
 	
-	property :name, 		String
+	property :name, 			String
 	property :description, 	String, length: 300
 	
 	property :specs, 			String, length: 300
@@ -16,6 +16,8 @@ class Product
 	property :url_name, 	String, length: 100
 	
 	property :pillows, 		String, length: 100
+	
+	property :position, 	Integer
 
 	belongs_to :productline
  	
