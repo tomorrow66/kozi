@@ -94,7 +94,7 @@ post '/contact/?' do
 	redirect back
 end
 
-get('/*/?') do 
-  @path = 'index'
-  erb :index, layout: false 
-end
+##get('/*/?') do 
+##  @path = 'index'
+##  erb :index, layout: false 
+##end

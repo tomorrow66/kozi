@@ -17,8 +17,11 @@
 			<li>Size 15" by 15"</li>
 			<li>Size 20" by 20"</li>
 		</ul>
-		
-		<p>*dry-clean washable only</p>
+		<% if @product.productline.url_name == 'plushtastic' %>
+			<p>*Machine Washable</p>
+		<% else %>
+			<p>*dry-clean only</p>
+		<% end %>
 	</div>
 <% end %>
 	

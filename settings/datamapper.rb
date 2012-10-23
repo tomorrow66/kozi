@@ -28,7 +28,7 @@ configure :production do
 	# DataMapper.setup :default, 'sqlite::memory:'
 
 	# SQLite
-	DataMapper.setup :default, "sqlite://#{Dir.pwd}/data/production.sqlite3"
+	DataMapper.setup :default, "sqlite://#{Dir.pwd}/data/development.sqlite3"
 
 	# MySQL
 	# DataMapper.setup :default, 'mysql://username:password@host_url:3306/database_name'
