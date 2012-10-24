@@ -10,7 +10,11 @@
 </div>
 <% if @product.pillows  %>
 	<div class="pillows">
-		<img class="right" src="/img/products/pillows/<%= @product.pillows %>" />
+		<% if @product.pillows.include? "<img" %>
+			<%= @product.pillows %>
+		<% else %>
+			<img class="right" src="/img/products/pillows/<%= @product.pillows %>" />
+		<% end %>
 		<h2>Pillows Available In</h2>
 		<ul class="unstlyled">
 			<li>Size 24" by 24"</li>
