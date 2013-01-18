@@ -1,5 +1,6 @@
     <h1>Contact</h1>
-  <p>To inquire about Kozi throws, check the respective boxes and fill out the form!</p>
+    <p>Phone: 404.580.8033</p>
+    <p>To inquire about Kozi throws, check the respective boxes and fill out the form!</p>
   <form action="/contact" method="post" name="contact" id="contact">
   <input type='hidden' name='submityes' value='yes' />
   <input type='hidden' name='fantasticalItems' id='fantasticalItems' value='' />
@@ -33,103 +34,21 @@
           </table>
       </td>
       <td>
-        <div id="fantasticalDiv" style="float:left;padding-left:15px;">
-        <h3>Fantastical</h3>
-        <table cellpadding="2" cellspacing="0" border="0">
-          <tr>
-            <td><input type="checkbox" name="checkfantistical1" value=" Retro Shag" /></td>
-            <td class="contactChoice">Retro Shag</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" name="checkfantistical2" value=" Fancy Feather Silver" /></td>
-            <td class="contactChoice">Fancy Feather Silver</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" name="checkfantistical3" value=" Fancy Feather Gold" /></td>
-            <td class="contactChoice">Fancy Feather Gold</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" name="checkfantistical4" value=" Stripe Mink" /></td>
-            <td class="contactChoice">Stripe Mink</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" name="checkfantistical5" value=" Peacock" /></td>
-            <td class="contactChoice">Peacock</td>
-          </tr>
-        </table>
-        </div>   
-        <div id="natureDiv" style="float:left;padding-left:15px;">
-        <h3>Nature</h3>
-        <table cellpadding="2" cellspacing="0" border="0">
-          <tr>
-            <td><input type="checkbox" name="checknature1" value=" Embossed Brown Beaver" /></td>
-            <td class="contactChoice">Embossed Brown Beaver</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" name="checknature2" value=" Brand Fox" /></td>
-            <td class="contactChoice">Brand Fox</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" name="checknature3" value=" Rabbit" /></td>
-            <td class="contactChoice">Rabbit</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" name="checknature4" value=" Chinchilla" /></td>
-            <td class="contactChoice">Chinchilla</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" name="checknature5" value=" Siberian Leopard" /></td>
-            <td class="contactChoice">Siberian Leopard</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" name="checknature6" value=" Snow Cheetah" /></td>
-            <td class="contactChoice">Snow Cheetah</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" name="checknature7" value=" Snow Lynx" /></td>
-            <td class="contactChoice">Snow Lynx</td>
-          </tr>
-        </table>
-        </div>   
-        
-        <div id="plushtasticDiv" style="float:left;padding-left:15px;">
-        <h3>Plushtastic</h3>
-        <table cellpadding="2" cellspacing="0" border="0">
-          <tr>
-            <td><input type="checkbox" name="checkplushtastic1" value=" Black Paisley" /></td>
-            <td class="contactChoice">Black Paisley</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" name="checkplushtastic2" value=" Ivory Paisley" /></td>
-            <td class="contactChoice">Ivory Paisley</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" name="checkplushtastic3" value=" Olive Paisley" /></td>
-            <td class="contactChoice">Olive Paisley</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" name="checkplushtastic4" value=" Ice Cream Cuddle Silver" /></td>
-            <td class="contactChoice">Ice Cream Cuddle Silver</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" name="checkplushtastic5" value=" Ice Cream Cuddle Caramel" /></td>
-            <td class="contactChoice">Ice Cream Cuddle Caramel</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" name="checkplushtastic6" value=" Shaggy Black" /></td>
-            <td class="contactChoice">Shaggy Black</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" name="checkplushtastic7" value=" Shaggy Camel" /></td>
-            <td class="contactChoice">Shaggy Camel</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" name="checkplushtastic8" value=" Shaggy Brown" /></td>
-            <td class="contactChoice">Shaggy Brown</td>
-          </tr>
-        </table>
-        </div>   
-      </td>
+      	<% @productlines.each do |pl| %>
+	        <div id="<%= pl.title %>lDiv" style="float:left;padding-left:15px;">
+	        <h3><%= pl.title.length == 11 ? pl.title.capitalize : "Nature" %></h3>
+	        <table cellpadding="2" cellspacing="0" border="0">
+	        	<% count = 1 %>
+	        	<% pl.products.each do |product| %>
+	          <tr>
+	            <td><input type="checkbox" name="check<%= pl.title.length == 11 ? pl.title.downcase : "nature" %><%= count += 1 %>" value="<%= product.name %>" /></td>
+	            <td class="contactChoice"><%= product.name %></td>
+	          </tr>
+	          <% end %>
+	        </table>
+	        </div>   
+	      <% end %>
+     </td>
     </tr>
   </table>
 </form>

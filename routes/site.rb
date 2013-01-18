@@ -22,6 +22,10 @@ end
 ['/contact/?', '/contact.php/?', '/contact.html/?' ].each do |path|
   get path do
     @path = path
+    nature = Productline.first(:title.like => "%Nature%")
+    fantastical = Productline.first(:title.like => "%Fantastical%")
+    plushtastic = Productline.first(:title.like => "%Plushtastic%")
+    @productlines = [nature, fantastical, plushtastic]
     erb :contact
   end
 end
@@ -64,7 +68,7 @@ end
 post '/contact/?' do
 	@path = 'contact'
 	contact = [params[:fullname], params[:email], params[:phone], "\n\n Comments: #{params[:comments]}"] 
-	products = [params[:checkfantistical1], params[:checkfantistical2], params[:checkfantistical3], params[:checkfantistical4], params[:checkfantistical5], params[:checknature1], params[:checknature2], params[:checknature3], params[:checknature4], params[:checknature5], params[:checknature6], params[:checknature7], params[:checknature1], params[:checknature2], params[:checknature3], params[:checknature4], params[:checknature5], params[:checknature6], params[:checknature7], params[:checknature8]]
+	products = [params[:checkfantistical1], params[:checkfantistical2], params[:checkfantistical3], params[:checkfantistical4], params[:checkfantistical5], params[:checkfantistical6], params[:checkfantistical7], params[:checkfantistical8], params[:checkplushtastic1], params[:checkplushtastic2], params[:checkplushtastic3], params[:checkplushtastic4], params[:checkplushtastic5], params[:checkplushtastic6], params[:checkplushtastic7], params[:checkplushtastic8], params[:checkplushtastic9], params[:checkplushtastic10], params[:checkplushtastic11], params[:checkplushtastic12], params[:checkplushtastic13], params[:checkplushtastic14], params[:checkplushtastic15], params[:checkplushtastic16], params[:checkplushtastic17], params[:checkplushtastic18], params[:checknature1], params[:checknature2], params[:checknature3], params[:checknature4], params[:checknature5], params[:checknature6], params[:checknature7], params[:checknature8]]
 
 	contact.compact!
 	contact.delete ''
@@ -85,7 +89,7 @@ post '/contact/?' do
 		products = str
 	end
 			Pony.mail(via: :smtp, via_options: settings.mail_server,
-			to: 'richard@tomorrowpictures.com',
+			to: 'charkoplin@kozishop.com',
 			subject: 'From Contact Form @Kozishop.com',
 			body: "Contact info: " + contact.to_s  + "\n\n Products: " + products.to_s
 		)
